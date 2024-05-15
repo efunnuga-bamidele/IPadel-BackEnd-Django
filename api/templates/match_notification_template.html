@@ -1,0 +1,49 @@
+<!-- welcome_email_template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPadel Match Notification</title>
+  </head>
+
+  <body style="font-family: Arial, sans-serif">
+    <div
+      style="
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+      "
+    >
+      <h2>iPadel Match Notification!</h2>
+
+      <p>Hello {{ recipient_name }},</p>
+
+      <p>This is to remind you of the upcoming game on the:</p>
+
+      <p><strong>Date:</strong> {{ game_date }}</p>
+      <p><strong>Time:</strong> {{ game_time }}</p>
+      <p><strong>Venue:</strong> {{ game_venue }}</p>
+
+      <h2>Players:</h2>
+      <ul>
+        {% for player in players %}
+        <li>{{ player.name }} - {{ player.gender }}</li>
+        {% endfor %}
+      </ul>
+      <p>
+        If you have any questions or need assistance, don't hesitate to contact
+        our support team.
+      </p>
+
+      <p>
+        Best regards,<br />
+        The iPadel Team, <br />
+        {{ contact_email }}
+      </p>
+    </div>
+  </body>
+</html>
